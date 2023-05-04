@@ -8,7 +8,8 @@ namespace GameUnits
         {
             SettlerUnit settler = new SettlerUnit();
             MilitaryUnit militar = new MilitaryUnit();
-            //militar.Attack();
+            militar.Attack(settler);
+            //MilitaryUnit.Attack(settler);
             settler.Move();
             militar.Move();
             Console.WriteLine($"Settler cost = {settler.Cost}");
