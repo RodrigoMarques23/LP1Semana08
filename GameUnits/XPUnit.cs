@@ -7,17 +7,30 @@ namespace GameUnits
 {
     public abstract class XPUnit : Unit
     {
+
+        //Proprietie XP, set only can be modified in this class, or in the ones
+        //that extend XPUnit
         public int XP { get; protected set; }
-        public XPUnit(int movement, int health, int xp) : base(movement, health)
+
+        /// <summary>
+        /// XPUnit constructor, sets the XP to 0
+        /// </summary>
+        /// <param name="movement"></param>
+        /// <param name="health"></param>
+        /// <returns></returns>
+        public XPUnit(int movement, int health) : base(movement, health)
         {
-            XP = xp;
-            xp = 0;
+            XP = 0;
         }
 
-        /*public override string ToString()
+        /// <summary>
+        /// Converts de object to a string
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
         {
-            return base.ToString() + String.Format();
-        }*/
+            return base.ToString() + String.Format($" XP={XP}");
+        }
 
 
 

@@ -5,10 +5,16 @@ namespace GameUnits
     public class MilitaryUnit : XPUnit
     {
         public int AttackPower { get; }
+
+        //Propriete Health overriden, putting health equals from xp unit + xp
         public override int Health { get => base.Health + XP; set => base.Health = value; }
+        
+        //Proprietie cost overriden, putting the cost = Attack power + xp
         public override float Cost { get => AttackPower + XP; }
+        
+        //Miltary unit Constructor
         public MilitaryUnit(int movement, int health, int attackPower)
-        : base(movement, health, attackPower)//review this, is not attack power
+        : base(movement, health)
         {
             AttackPower = attackPower;
         }
@@ -26,12 +32,12 @@ namespace GameUnits
         }
 
         /// <summary>
-        /// Converts de object to a string
+        /// Converts the object to a string
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
-            return base.ToString() + String.Format(" AP={0,1} XP={1,1}", AttackPower, XP);
+            return base.ToString() + String.Format(" AP={0,1}", AttackPower);
         }
     }
 }
