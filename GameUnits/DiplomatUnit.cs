@@ -14,11 +14,11 @@ namespace GameUnits
         }
         public void MakeAgreement(Unit unit)
         {
-            if (unit.GetType == DiplomatUnit)
+            if (unit is DiplomatUnit)
             {
                 XP += 3;
             }
-            if (unit.GetType == SettlerUnit)
+            if (unit is SettlerUnit)
             {
                 XP += 2;
             }
