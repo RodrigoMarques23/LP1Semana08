@@ -2,17 +2,15 @@ using System;
 
 namespace GameUnits
 {
-    public class MilitaryUnit : Unit
+    public class MilitaryUnit : XPUnit
     {
         public int AttackPower { get; }
-        public int XP { get; private set; }
         public override int Health { get => base.Health + XP; set => base.Health = value; }
         public override float Cost { get => AttackPower + XP; }
         public MilitaryUnit(int movement, int health, int attackPower)
-        : base(movement, health)
+        : base(movement, health, attackPower)//review this, is not attack power
         {
             AttackPower = attackPower;
-            XP = 0;
         }
 
         /// <summary>
